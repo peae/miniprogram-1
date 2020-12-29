@@ -15,7 +15,11 @@ Page({
       url: '../logs/logs'
     })
   },
+  onPullDownRefresh: function(){
+    this.getHitokotoInfo();
+  },
   onLoad: function () {
+    this.getHitokotoInfo();
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -49,6 +53,26 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  getHitokotoInfo: function() {
+    var that = this;
+    wx.request({
+      url: 'https://v1.hitokoto.cn/?c=a',
+      success: function(res) {
+        if(res.statusCode === 200){
+          console.log(res.data.hitokoto, res.data.from);
+          that.setData({
+            motto: res.data.hitokoto,
+          })
+        }
+      },
+      fail: function(res){
+        wx.showToast({
+          title: '系统错误',
+          icon: 'none',
+        })
+      }
     })
   }
 })

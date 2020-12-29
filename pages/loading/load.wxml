@@ -1,0 +1,3 @@
+<!--pages/loading/load.wxml-->
+<text>pages/loading/load.wxml</text>
+<button loading="{{loading}}" bindtap="tap">操作</button>
