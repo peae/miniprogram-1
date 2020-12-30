@@ -62,6 +62,8 @@ Page({
       success: function(res) {
         if(res.statusCode === 200){
           console.log(res.data.hitokoto, res.data.from);
+          // 转为字符串列表，或原生html字符串
+          // ，。、, . ? ？!！
           that.setData({
             motto: res.data.hitokoto,
           })
