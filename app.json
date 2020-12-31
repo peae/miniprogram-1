@@ -2,14 +2,47 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/loading/load"
+        "pages/loading/load",
+        "pages/settings/settings",
+        "pages/export/export",
+        "pages/import/import",
+        "pages/keyinfo/keyinfo",
+        "pages/hitokoto/hitokoto"
     ],
     "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Weixin",
-        "navigationBarTextStyle": "black"
+        "navigationBarTitleText": "暗影魔法使",
+        "navigationBarBackgroundColor": "@navBgColor",
+        "navigationBarTextStyle": "@navTxtStyle",
+        "backgroundColor": "@bgColor",
+        "backgroundTextStyle": "@bgTxtStyle",
+        "backgroundColorTop": "@bgColorTop",
+        "backgroundColorBottom": "@bgColorBottom"
     },
+    "tabBar": {
+        "color": "@tabFontColor",
+        "selectedColor": "@tabSelectedColor",
+        "backgroundColor": "@tabBgColor",
+        "borderStyle": "@tabBorderStyle",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/settings/settings",
+                "text": "设置"
+            }
+        ]
+    },
+
     "style": "v2",
-    "sitemapLocation": "sitemap.json"
+    "sitemapLocation": "sitemap.json",
+    "darkmode": true,
+    "themeLocation": "theme.json",
+    "useExtendedLib": {
+        "kbone": true,
+        "weui": true
+    },
+    "usingComponents": {
+        "mp-form": "weui-miniprogram/form/form"
+    }
 }

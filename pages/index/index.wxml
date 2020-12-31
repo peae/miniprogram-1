@@ -1,14 +1,16 @@
 <!--index.wxml-->
-<view class="container">
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view> -->
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-    <!-- <map bindmarkertap="markertap" longitude="113.65" latitude="34.76"></map> -->
+<view class="page">
+  <view class="page__bd">
+    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+  </view>
+  <mp-cells ext-class="my-cells" title="">
+    <mp-cell link hover wx:for="{{namelist}}" value="{{item.name}}" url="{{item.pagePath}}">
+    </mp-cell>
+    <!-- <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+      <mp-cell value="左滑可以删除" footer="说明文字"></mp-cell>
+    </mp-slideview> -->
+  </mp-cells>
+  <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="addKey">确定</button>
   </view>
 </view>
