@@ -15,7 +15,7 @@
         <view>数据清空之后无法找回</view>
     </mp-dialog>
 
-    <mp-cells ext-class="my-cells" title="更多功能">
+    <mp-cells ext-class="my-cells" title="更多">
       <mp-cell link url="{{item.pagePath}}" hover wx:for="{{more}}" value="{{item.title}}" footer="{{item.desc}}">
         <image slot="icon" src="{{item.icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
       </mp-cell>

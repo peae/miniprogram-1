@@ -41,7 +41,14 @@ Page({
             "desc": "",
             "url": "",
             "pagePath": "/pages/hitokoto/hitokoto",
-        }, ]
+        },
+        {
+            "icon": "",
+            "title":"关于",
+            "desc":"",
+            "pagePath":"/pages/info/info",
+        }
+     ]
     },
 
     clearData: function () {
@@ -53,7 +60,21 @@ Page({
         this.setData({
             dialogShow: false,
 
-        })
+        });
+        if (e.detail.index === 1){
+
+            wx.clearStorage({
+                success: (res) => {
+                    wx.showToast({
+                      title: '数据已经清空',
+                      duration: 1000
+                    })
+                },
+              })
+        }
+        console.log("===============")
+        console.log(e.detail.index);
+        
     },
 
     pageTo: function (event) {
