@@ -5,6 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
+        string_keys: '',
+
 
     },
 
@@ -12,6 +14,27 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        
+        let that = this;
+        wx.setNavigationBarTitle({
+          title: '格式化导出',
+        });
+
+        wx.getStorage({
+            key: 'anyingkey',
+            success(res){
+                that.setData({
+                    string_keys: JSON.stringify(res.data),
+
+                })
+            },
+            fail(res){
+                that.setData({
+                    string_keys: '当前列表为空',
+
+                })
+            }
+        })
 
     },
 

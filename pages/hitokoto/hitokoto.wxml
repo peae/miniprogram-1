@@ -1,5 +1,15 @@
+<!-- <view class="container">
+     -->
+
 <view>
 
-    <text wx:for="{{content}}">{{item}}</text>
+
+    <!-- <text class="label">Hello world</text> -->
+
+    <image class="backgroundimage" src="http://img17.3lian.com/d/file/201702/24/6d1e21ce878babe0909bfbf1735b062b.jpg" mode="aspectFit"></image>
+
+    <!-- <view>
+        <text class="contentview" wx:for="{{content}}">{{item}}</text>
+    </view> -->
 
 </view>

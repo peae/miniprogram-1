@@ -74,7 +74,7 @@ Component({
             // formDataList.push(formData);
 
 
-            let anYingList = Array();
+            let anYingList = new Array();
             // 获取存储
             wx.getStorage({
                 key: 'anyingkey',
@@ -83,10 +83,21 @@ Component({
                     anYingList = res.data;
                     anYingList.push(formData);
                     // console.log(anYingList);
+                    let names = new Array();
+                    anYingList.forEach(element => {
+                        names.push(element.name);
+                    });
+                    console.log("======");
+                    console.log("names");
+                    console.log(names);
                     wx.setStorage({
                         data: anYingList,
                         key: 'anyingkey',
                     });
+                    wx.setStorage({
+                        key:"names",
+                        data:names
+                    })
                 },
                 fail(res) {
                     that.data.formDataList.push(formData);
@@ -127,9 +138,6 @@ Component({
             });
 
             this.backLastPage();
-
-
-
         },
 
         backLastPage: function () {

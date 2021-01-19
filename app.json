@@ -8,7 +8,8 @@
     "pages/import/import",
     "pages/keyinfo/keyinfo",
     "pages/hitokoto/hitokoto",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/addkey/addkey"
   ],
   "window": {
     "navigationBarTitleText": "暗影魔法使",

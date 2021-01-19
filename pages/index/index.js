@@ -94,10 +94,10 @@ Page({
           namelist:[]
         })
 
-        wx.showToast({
-          title: '当前列表为空',
-          duration: 1000
-        });
+        // wx.showToast({
+        //   title: '当前列表为空',
+        //   duration: 1000
+        // });
         console.log(that.data.namelist);
       },
     })
@@ -109,6 +109,10 @@ Page({
 
 
   onLoad: function () {
+    wx.setNavigationBarTitle({
+      title: 'Keys',
+    });
+    
     this.getKeyNameList();
     // let nameList = this.getKeyNameList();
     // this.setData({

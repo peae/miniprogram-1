@@ -80,8 +80,8 @@ Page({
                     that.setData({
                         content: that_content,
                     });
-                    
-                    
+
+
                 }
             },
             fail: function (res) {

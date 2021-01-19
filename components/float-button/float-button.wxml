@@ -1,0 +1,5 @@
+<view class="float-button" hover-class="hover" bindtap="click">
+    <text class="content">
+        <slot></slot>
+    </text>
+</view>
